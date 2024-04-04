@@ -11,3 +11,6 @@ echo "Administrator::RESPONDER:38349c0ce7942c6d:81425C2D93391D50BA79AF22D25B52BA
 ```bash
 john -w=/usr/share/wordlists/rockyou.txt hash.txt
 ```
+
+
+john -w=/usr/share/wordlists/rockyou.txt "InVzZXIi.uAlmXlTvm8vyihjNaPDWnvB_Zfs"

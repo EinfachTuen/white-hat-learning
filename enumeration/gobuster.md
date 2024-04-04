@@ -18,6 +18,7 @@ dir : specify we are using the directory busting mode of the tool
 
 -x php.html : search for files with the extension .php or .html finds more than without it
 
+ vhost find also virtual hosts (subdomains)
 
 Scan an IP Address by routes based on the wordlist
 ```sh
@@ -28,6 +29,11 @@ sudo gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
 
 sudo gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -u 10.129.245.110 -x php.html
 
+sudo gobuster vhost -w /opt/useful/SecLists/Discovery/DNS/subdomains-top1million-5000.txt -u http://thetoppers.htb
+
+sudo gobuster dir -w /opt/useful/SecLists/Discovery/DNS/subdomains-top1million-5000.txt -u http://ignition.htb/
+
+sudo gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.tx -u http://10.129.253.171:5000/
 
 ```
 

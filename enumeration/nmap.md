@@ -10,13 +10,20 @@
 
 **-sC** run with default Scripts (more Infos)
 
+**-Pn** Treat all hosts as online -- skip host discovery
+
+
 Find informations about ports:
 https://www.speedguide.net/port.php?port=3389
 
 
 ## Usual scripts:
 ```sh
-nmap -p- -sV -sC --min-rate=100000 10.129.103.187
+nmap -p- -sV -sC --min-rate=100000 10.129.142.225
+```
+
+```sh
+nmap -p- -sV -sC -Pn --min-rate=100000 10.129.253.171
 ```
 
 ## Special scripts:

@@ -1,4 +1,5 @@
 ## SMB
+Server Message Block
 
 ### SMB Responder: 
 
@@ -24,3 +25,30 @@ and you want Responder to only interact with network traffic that's coming over 
 ```
 server is now listening
 
+
+### SMBClient
+
+-L : List available shares on the target.
+
+-U : Login identity to use.
+
+
+Onfound username:
+$ = Signalised t
+
+```sh
+sudo apt install smbclient
+```
+
+```sh
+smbclient -L 10.129.206.31 -U Administrator
+
+smbclient \\\\10.129.206.31\\ADMIN$ -U Administrator #with folder ADMIN$
+smbclient \\\\10.129.206.31\\AC$ -U Administrator #with folder C
+
+
+```
+
+```sh
+get "flag.txt" #to get the flag
+```
