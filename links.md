@@ -7,3 +7,5 @@ https://github.com/danielmiessler/SecLists.git - wordlists
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md - Reverse Shell Payload Cheatsheet
 
 https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet Reverse ShellCheat Sheet
+
+https://www.speedguide.net/port.php?port=3389 infos über ports

@@ -1,0 +1,11 @@
+## Tips
+- Always check for all ports.
+- Try to enumerate as much as possible.
+- if one tool does not work good enought in that situation try another.
+- Can you login withouth credentials?
+- Can you bruteforce credentials?
+- After login which rights do you have? Execute, Write, Read?
+- Use your hacker mindset to find try to find a way around dont run again and again in the same wall.
+- Look for web servers and then chaining vulnerabilities, like local file inclusion (LFI)
+- relax puzzle solving is fun think
+- 

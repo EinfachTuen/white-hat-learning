@@ -9,7 +9,7 @@ echo "10.129.108.117 thetoppers.htb" | sudo tee -a /etc/hosts
 ```
 
 ```sh
-echo "10.129.108.117 s3.thetoppers.htb" | sudo tee -a /etc/hosts
+echo "10.129.251.52 dev.devvortex.htb/" | sudo tee -a /etc/hosts
 ```
 
 ```sh
@@ -49,7 +49,16 @@ python3 -m http.server 8000
 ip a | grep tun0 
 
 ```
-
+### pwd
+```sh
+pwd #print working directory
+```
 ```sh
 python -m http.server 8001
+```
+
+### Differences between files
+```sh
+diff -y file1 file2
+-y # side by side
 ```

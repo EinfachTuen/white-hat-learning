@@ -18,5 +18,5 @@ n : Numeric-only IP address. No hostname resolution. DNS is not being used.
 p : Port. Use to specify a particular port for listening.
 
 
-nc -lvnp 8001
+nc -lvnp 1337
 ```
