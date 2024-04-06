@@ -17,14 +17,19 @@ nc -nv -w 1 -z <target-ip> <port-range>
 -vn # verbose and no DNS resolution
 
 ```
-#### Banner Grabbing
-will be added
-```sh
+### Banner Grabbing
 
+#### Netcat to use older HTTP Versions
+```sh
+nc -v <target-ip> 80
+GET / HTTP/1.0
+
+# with path
+nc -v <target-ip> 80
+GET /images HTTP/1.0
 ```
 
-
-#### Example:
+### Examples:
 
 ```bash
 nc -nc -w 1 -z 192.234.1.1 1-1000
