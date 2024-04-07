@@ -4,6 +4,19 @@ Can be used for several thinks
 - File Transfer
 - Reverse Shells
 
+### How to use
+```bash
+nc -h
+
+l : Listening mode.
+v : Verbose mode. Displays status messages in more detail.
+n : Numeric-only IP address. No hostname resolution. DNS is not being used.
+p : Port. Use to specify a particular port for listening.
+
+
+nc -lvnp 1337
+```
+
 ### Port Scanning
 maybe slower than nmap, but can be used if nmap is not available
 

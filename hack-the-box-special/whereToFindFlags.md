@@ -1,4 +1,8 @@
+## HTB Special guides
 
+### Where to find flags
+#### On shell
 ```shell 
-on ssh if you are root user try cat ~/root.txt
+cat /home/user/user.txt # user flag
+cat ~/root.txt # if you have root access 
 ```

