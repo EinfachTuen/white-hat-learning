@@ -9,7 +9,7 @@ echo "10.129.108.117 thetoppers.htb" | sudo tee -a /etc/hosts
 ```
 
 ```sh
-echo "10.129.251.52 dev.devvortex.htb/" | sudo tee -a /etc/hosts
+echo "10.129.251.52 dev.devvortex.htb" | sudo tee -a /etc/hosts
 ```
 
 ```sh

