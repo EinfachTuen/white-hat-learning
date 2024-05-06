@@ -42,3 +42,9 @@ made by portswigger [burpsuite](https://portswigger.net/burp)
     - Binary
     - GZIP
 
+### Browser Proxy Settings:
+- with this settings the browser use the burp proxy directly
+![img.png](../img/img.png)
+
+
+### Burp Suite Target navigation can also reveal hidden directories

@@ -198,10 +198,10 @@ vuln	  #Identification of specific vulnerabilities.
 sudo nmap 10.129.183.156 -p 20,80,110,139,143,445  -sV --script vuln --min-rate=100000
 
 # Detect OS but appear as 5 random ips
-sudo nmap 10.129.21.202 -sV -D RND:5 -p- -vv --stats-every=20s -oN special -vv 
+sudo nmap 10.129.46.212 -sV -D RND:10 -p- -vv --stats-every=20s -oN special -vv 
 
 # to not get detected so easy
-sudo nmap -O 10.129.21.202 -D RND:10 -T2 -vv --stats-every=20s -oN special -sA 
+sudo nmap -sV 10.129.46.212 -D RND:10 -T2 -vv --stats-every=20s -oN special -sA 
 
 # with aggressive mode
 sudo nmap -O 10.129.21.202 -A -D RND:10 -T2 -vv --stats-every=20s -oN special -sA --top-ports=10 

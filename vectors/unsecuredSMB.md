@@ -17,4 +17,5 @@ smbclient \\\\10.129.206.31\\ADMIN$ -U Administrator #with folder ADMIN$
 smbclient \\\\10.129.206.31\\AC$ -U Administrator #with folder C
 
 
+
 ```

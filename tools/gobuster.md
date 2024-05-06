@@ -25,7 +25,7 @@ dir #specify we are using the directory busting mode of the tool
 -x php.html #example search for files with the extension .php or .html finds more than without it
 -r #recursive, search for files in subdirectories and follow redirects
 vhost #find also virtual hosts (subdomains)
- ```
+ ```-
 ### Examples
 ```sh
 sudo gobuster dir -w /usr/share/wordlists/dirb/common.txt -u 10.129.245.110

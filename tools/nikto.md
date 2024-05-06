@@ -7,5 +7,5 @@ Robust web server scanner that checks for over 6700 potentially dangerous files/
 
 ### Use
 ```sh
-nikto -h <target-ip> -p <port> #scan a target
+nikto -h 10.129.20.215 -p 80 #scan a target
 ```

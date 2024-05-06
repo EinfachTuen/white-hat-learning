@@ -1,7 +1,7 @@
 ## John the Ripper
 - there is a gui based version called Johnny
 - - not in kali
-### Cracking a password hash
+### Cracking a password hash10.10
 -w : wordlist to use for cracking the hash
 
 ```bash
