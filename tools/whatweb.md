@@ -4,4 +4,8 @@ Simple tool to identify technologies used on websites. It is a useful tool for p
 ### Example
 ```sh
 whatweb <url>
+
+whatweb -a3 https://www.facebook.com -v # aggressive scan and verbose output
+
+whatweb -a3 dev.inlanefreight.local -v
 ```

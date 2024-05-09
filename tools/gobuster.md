@@ -1,4 +1,4 @@
-## gobuster 
+# gobuster 
 can scan possible paths in websites
 Scan an IP Address or DNS Names based on the wordlist
 
@@ -6,12 +6,6 @@ Scan an IP Address or DNS Names based on the wordlist
 - Can specify a wordlist
 - can specify extensions
 - can specify threds
-
-### Installation
-```sh
-sudo apt install golang-go
-go install github.com/OJ/gobuster/v3@lates
-```
 
 ### Parameter
 ```sh
@@ -24,8 +18,32 @@ dir #specify we are using the directory busting mode of the tool
 -x # specify the file extension to search for
 -x php.html #example search for files with the extension .php or .html finds more than without it
 -r #recursive, search for files in subdirectories and follow redirects
+-o: Output file
 vhost #find also virtual hosts (subdomains)
- ```-
+```
+
+## Installation
+```sh
+sudo apt install golang-go
+go install github.com/OJ/gobuster/v3@lates
+```
+
+## GoBuster - DNS with patterns.txt
+#### create patterns.txt
+```sh
+#patterns .txt content examole 
+lert-api-shv-{GOBUSTER}-sin6
+atlas-pp-shv-{GOBUSTER}-sin6
+```
+#### Gobuster - DNS
+```sh
+export TARGET="facebook.com"
+export NS="d.ns.facebook.com"
+export WORDLIST="numbers.txt"
+gobuster dns -q -r "${NS}" -d "${TARGET}" -w "${WORDLIST}" -p ./patterns.txt -o "gobuster_${TARGET}.txt" 
+```
+
+
 ### Examples
 ```sh
 sudo gobuster dir -w /usr/share/wordlists/dirb/common.txt -u 10.129.245.110

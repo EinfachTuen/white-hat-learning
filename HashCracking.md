@@ -24,7 +24,7 @@ john--show hash.txt # This will show the cracked hash, if you open same file aga
 - uses gpu
 
 ```bash
-hashcat -m 0 hash.txt /usr/share/wordlists/rockyou.txt # This will try to crack the hash with the rockyou wordlist
+hashcat -m 0 forHash.txt /usr/share/wordlists/rockyou.txt # This will try to crack the hash with the rockyou wordlist
 # -m 0 is for MD5
 ```
 

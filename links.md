@@ -7,9 +7,13 @@
 - https://www.speedguide.net/port.php?port=3389 infos über ports
 - https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/ sql injection authentication bypass
 
-
+### Tools
+- https://crackstation.net/ hash cracking
 ### Courses
 - https://www.offsec.com/metasploit-unleashed/ - Metasploit Unleashed Metasploit learning
+
+### Security Blogs:
+- https://googleprojectzero.blogspot.com/2023/10/an-analysis-of-an-in-the-wild-ios-safari-sandbox-escape.html
 
 
 ### CVEs and Exploits
@@ -18,6 +22,19 @@
 - https://cve.mitre.org/
 - https://packetstormsecurity.com/
 
+### Penetration test Guidance
+https://listings.pcisecuritystandards.org/documents/Penetration_Testing_Guidance_March_2015.pdf
 
-### Writeups
-search for them specifically a lot of writeups contain intresting attack paths
+## Footprintin / Enumeration
+- https://crt.sh/
+- https://en.wikipedia.org/wiki/Certificate_Transparency
+- https://domain.glass/
+- https://buckets.grayhatwarfare.com/
+- https://www.shodan.io/
+
+
+## Security plus learning questions (this is only here cause i have to save it)
+goes over everything related to the Sec+ 
+https://www.examcompass.com/comptia-security-plus-practice-test-1-exam-sy0-601 (edited)
+This guy will help you through any performance based questions
+https://www.youtube.com/channel/UC_9oawxlz1IpoGYoxnMx0eA 
