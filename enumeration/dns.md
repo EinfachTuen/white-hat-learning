@@ -112,6 +112,7 @@ whois 157.240.199.35
 ### nslookup
 ```sh
 nslookup 
+nslookup -query=MX githubapp.com
 ```
 ####  A Records
 ```sh

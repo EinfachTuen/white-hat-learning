@@ -15,6 +15,14 @@
 ### Security Blogs:
 - https://googleprojectzero.blogspot.com/2023/10/an-analysis-of-an-in-the-wild-ios-safari-sandbox-escape.html
 
+### Standards:
+- http://www.pentest-standard.org/index.php/Main_Page - Pentest standard.org
+- https://www.isecom.org/OSSTMM.3.pdf - Open Source Security Testing Methodology Manual another standard
+- https://www.nist.gov/cyberframework - NIST Cybersecurity Framework
+- https://owasp.org/ - OWASP
+- https://owasp.org/www-project-web-security-testing-guide/ - OWASP Web Security Testing Guide
+- https://owasp.org/www-project-mobile-app-security/ - OWASP Mobile Security Testing Guide
+- https://github.com/scriptingxss/owasp-fstm - OWASP Firmware Security Testing Methodology
 
 ### CVEs and Exploits
 - https://www.exploit-db.com/ - Exploit Database
@@ -38,3 +46,7 @@ goes over everything related to the Sec+
 https://www.examcompass.com/comptia-security-plus-practice-test-1-exam-sy0-601 (edited)
 This guy will help you through any performance based questions
 https://www.youtube.com/channel/UC_9oawxlz1IpoGYoxnMx0eA 
+
+## CVSS Calculation:
+- https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-345271 - example
+- https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator - CVSS Calculator

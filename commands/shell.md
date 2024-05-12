@@ -72,8 +72,7 @@ scp file user@ip:/path/to/file # sending
 echo to host file
 
 ```sh
-echo "10.129.152.215 unika.htb" | sudo tee -a /etc/hosts
-```
+cat
 
 ```sh
 echo "10.129.108.117 thetoppers.htb" | sudo tee -a /etc/hosts

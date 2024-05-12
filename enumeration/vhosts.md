@@ -60,6 +60,13 @@ echo "store" >> vhosts
 echo "support" >> vhosts
 echo "www" >> vhosts
 
-cat ./vhosts | while read vhost;do echo "\n********\nFUZZING: ${vhost}\n********";curl -s -I http://192.168.10.10 -H "HOST: ${vhost}.randomtarget.com" | grep "Content-Length: ";done
+cat ./vhosts | while read vhost;do echo "\n********\nFUZZING: ${vhost}\n********";curl -s -I http://10.129.42.195 -H "HOST: ${vhost}.randomtarget.com" | grep "Content-Length: ";done
+
+curl -s http://10.129.42.195 -H "Host: dev-admin.inlanefreight.htb"
+
+
 ```
-## for Fuff see fuff.md
+## for more Fuff see fuff.md
+```shell
+ffuf -w /usr/share/SecLists/Discovery/DNS/namelist.txt  -H "Host: FUZZ.inlanefreight.htb" -u http://10.129.42.195  -mr "FLAG No." -fs 10918 -mc 200
+```
