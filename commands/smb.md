@@ -88,7 +88,7 @@ smbclient  -N -L 10.129.206.31
 #-N : No password
 #-L : This option allows you to look at what services are available on a server
 smbclient -N \\\\ 10.129.253.64\\backups #anonamous access to backups
-smbclient //10.129.253.64/sambashare #normal acces to a share
+smbclient //10.129.253.64/sambawshare #normal acces to a share
 smbclient -L 10.129.206.31 -U Administrator
 
 smbclient \\\\10.129.206.31\\ADMIN$ -U Administrator #with folder ADMIN$

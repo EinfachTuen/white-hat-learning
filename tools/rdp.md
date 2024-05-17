@@ -33,6 +33,6 @@ Authentication and connection to such RDP servers can be made in several ways. F
 
 #### Initiate an RDP Session
 ```sh
-xfreerdp /u:cry0l1t3 /p:"P455w0rd!" /v:10.129.201.248
+xfreerdp /u:htb-student /p:"HTB_@cademy_stdnt!" /v:10.129.201.55
 ```
 After successful authentication, a new window will appear with access to the server's desktop to which we have connected.
