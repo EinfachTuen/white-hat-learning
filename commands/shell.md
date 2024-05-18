@@ -1,5 +1,7 @@
 ## Shell
-
+Every operating system has a shell, and to interact with it, we must use an application known as a terminal emulator.
+- Like Windows Terminal, PowerShell, Command Prompt, PuTTY, GNOME Terminal, and iTerm2 etc ...
+- its also often possible to install a terminal emulator on other OS
 
 ### bin/bash vs bin/shell
 - at bin/shell only $ is shown

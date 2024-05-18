@@ -6,6 +6,8 @@
 - https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet Reverse ShellCheat Sheet
 - https://www.speedguide.net/port.php?port=3389 infos über ports
 - https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/ sql injection authentication bypass
+- https://gtfobins.github.io/
+- https://lolbas-project.github.io/
 
 ### Tools
 - https://crackstation.net/ hash cracking
