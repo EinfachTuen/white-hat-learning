@@ -8,6 +8,9 @@
 - https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/ sql injection authentication bypass
 - https://gtfobins.github.io/
 - https://lolbas-project.github.io/
+- https://ippsec.rocks/?# search for videos with certain knowledge ippsec.rocks - all the HTB writeups
+- https://pentester.land/writeups/ some other cool writeups not Hack the box
+- https://blog.stratumsecurity.com/
 
 ### Tools
 - https://crackstation.net/ hash cracking
@@ -52,3 +55,6 @@ https://www.youtube.com/channel/UC_9oawxlz1IpoGYoxnMx0eA
 ## CVSS Calculation:
 - https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-345271 - example
 - https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator - CVSS Calculator
+
+## Vektors for later analyze
+https://blog.stratumsecurity.com/2023/12/18/apache-lucene-injection-on-auth0-implementation/

