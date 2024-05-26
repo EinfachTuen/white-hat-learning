@@ -219,3 +219,4 @@ ls -la <path/to/fileorbinary>
 ```
 sudo -l
 ```
+

